@@ -16,9 +16,14 @@
         <p>Grass is greener</p> 
     </div>
     <div class="dropdown menu?">
-        <button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown"> <!-- This is to confine the dropdown into a small portion-->
+        <!--<button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown"> -->
+            <!-- This is to confine the dropdown into a small portion-->
         <div class="form-group">
             <label for="sel1">What is your major?</label>
+            <button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+                <!--This puts it directly to the right of what is yoru major -->
+            <p style="margin-left:2.5em">
+                <p style="margin-right:2.5em"></p>
             <select class="form-control" id="sel1">
               <option>Brenden</option>
               <option>Blasius</option>
@@ -27,15 +32,18 @@
               <option>Dust</option>
             </select>
             <br>
-            </div>
+            </p>
+            </p>
+        </div>
     </div>
 
     <div class="dropdown menu?">
-        
+        <!-- I assume you want the dropdown to hold all classes, and have it save what class the user 
+        selected in the json file? Send help.-->
         <button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown">
             <div class="form-group">
                 <label for="sel1">What is your Classes have you taken?</label>
-                <select multiple class="form-control" id="sel2">
+                <select multiple class="form-control" id="sel1">
                   <option>Brenden</option>
                   <option>Blasius</option>
                   <option>Bites</option>
@@ -45,6 +53,9 @@
                 <br>
                 </div>
             </button>
+    </div>
+        <div class="container">
+            <input type="submit" class="btn btn-info" value="Submit">
         </div>
 </body>
 </html>
