@@ -3,7 +3,9 @@ import csv
 class node:##node
     path=[]
     classes=[]
-    
+    goalb=[]
+    goalc=[]
+    unit=0
     output = []
     f= open( 'data.txt', 'r' ) #open the file in read univ ersal mode
     for line in f:
@@ -14,36 +16,38 @@ class node:##node
 
     def expand(self):
         parent = self
+        explored.append(parent)
         for course,unit,pre1,pre2,pre3,pre4 in parent.output:
             if (pre1 or pre2 or pre3 or pre4 == parent.Course):
                 parent.classes.append(course)
+                
         for x in parent.classes:
-            
             child=node()
             child.path=parent.path
             child.path.append(parent.Course)
             child.classes=parent.classes
             child.Course=x
-            frontier.append(child)
+            child.unit=parent.unit+4
+            if(False == (explored.__contains__(child))):
+               frontier.append(child)
             print(child.Course)
+            #print(child.path)
             
     
 
             
 
-            
 
-        
-    
-    
+
+explored = []
+
 frontier=[]
-
-
-class cancer:
-   ## while(True):
-        node=frontier.pop
+def sort(self):
+    #Brendan will deal with this
+    Placeholder=89
 
 output = []
+
 
 f = open( 'data.txt', 'r' ) #open the file in read universal mode
 for line in f:
@@ -58,15 +62,11 @@ for course,unit,pre1,pre2,pre3,pre4 in output:
         c.classes.append(course)
 
 c.Course="CSE20"
+c.unit=4
 frontier.append(c)
 while True:
     frontier.pop().expand()
-    print("cancer")
-
-
-
-
-
-
-
-
+    frontier.sort(key="node.unit") 
+    
+    
+    
