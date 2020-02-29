@@ -7,20 +7,31 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .bg-1 {
+      background-color: #73E4DA; /* epic blue color that I think looks like my degree path's blue */
+      color: #ffffff;
+    }
+    </style>
 </head>
+
 <body>
 
-    </div>
-    <div class="jumbotron">
+    <div class="jumbotron container-fluid bg-1 text-center">
+        
         <h1>Nathan Edwards Desu Chan</h1> 
         <p>Grass is greener</p> 
     </div>
+
+
     <div class="dropdown menu?">
         <!--<button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown"> -->
             <!-- This is to confine the dropdown into a small portion-->
         <div class="form-group">
             <label for="sel1">What is your major?</label>
-            <button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+            <button class="btn .btn-info dropdown-toggle" 
+            style="background-color:#73E4DA; color:white" 
+            type="button" data-toggle="dropdown">
                 <!--This puts it directly to the right of what is yoru major -->
             <p style="margin-left:2.5em">
                 <p style="margin-right:2.5em"></p>
@@ -37,10 +48,17 @@
         </div>
     </div>
 
+
+    <div class="Question 2">
+        <h3>What classes have you taken?</h3> 
+    </div>
+
     <div class="dropdown menu?">
         <!-- I assume you want the dropdown to hold all classes, and have it save what class the user 
         selected in the json file? Send help.-->
-        <button class="btn .btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+        
+        <button class="btn .btn-info dropdown-toggle" style="background-color:#73E4DA; color:white" 
+        type="button" data-toggle="dropdown">
             <div class="form-group">
                 <label for="sel1">What is your Classes have you taken?</label>
                 <select multiple class="form-control" id="sel1">
@@ -53,9 +71,10 @@
                 <br>
                 </div>
             </button>
-    </div>
-        <div class="container">
             <input type="submit" class="btn btn-info" value="Submit">
-        </div>
+    </div>
+        <!--<div class="container">
+            
+        </div>-->
 </body>
 </html>
