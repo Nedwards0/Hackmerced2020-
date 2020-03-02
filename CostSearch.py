@@ -1,4 +1,6 @@
-import csv   
+import csv 
+import time
+
 
 class node:##node
     path=[]
@@ -7,6 +9,8 @@ class node:##node
     goalc=[]
     unit=0
     output = []
+    childpath=[]
+  
     f= open( 'data.txt', 'r' ) #open the file in read univ ersal mode
     for line in f:
         cells = line.split( " " )
@@ -15,36 +19,48 @@ class node:##node
         Course=None
 
     def expand(self):
-        parent = self
-        explored.append(parent)
-        for course,unit,pre1,pre2,pre3,pre4 in parent.output:
-            if (pre1 or pre2 or pre3 or pre4 == parent.Course):
-                parent.classes.append(course)
-                
-        for x in parent.classes:
+        
+        explored.append(self)
+        for course,unit,pre1,pre2,pre3,pre4 in self.output:
+            if (pre1 or pre2 or pre3 or pre4 == self.Course):
+                self.classes.append(course)
+        
+        for x in self.classes:
+            
             child=node()
-            child.path=parent.path
-            child.path.append(parent.Course)
-            child.classes=parent.classes
+            
+            
+            child.classes=self.classes
+            
+            
             child.Course=x
-            child.unit=parent.unit+4
+            child.childpath=(child.Course)
+            child.childpath=(self.path)
+            child.childpath.append(child.Course)
+            print(child.childpath)
+            
+
+           
+            
+            
+            child.unit=self.unit+4
             if(False == (explored.__contains__(child))):
                frontier.append(child)
-            print(child.Course)
-            #print(child.path)
             
-    
+               
+            
+           
+            time.sleep(4)
+           
 
-            
+
+  
 
 
 
 explored = []
 
 frontier=[]
-def sort(self):
-    #Brendan will deal with this
-    Placeholder=89
 
 output = []
 
@@ -64,9 +80,10 @@ for course,unit,pre1,pre2,pre3,pre4 in output:
 c.Course="CSE20"
 c.unit=4
 frontier.append(c)
+c.path.append(c.Course)
 while True:
-    frontier.pop().expand()
-    frontier.sort(key="node.unit") 
+    frontier.pop(0).expand()
+    
     
     
     
